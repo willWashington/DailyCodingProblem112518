@@ -42,19 +42,3 @@ namespace DailyCodingProblem112518
         }
     }
 }
-
-// for each number
-//   loop over each number (skipping same numbers)
-
-
-/*
-                 int indexPlus = x + 1;
-            if (itemList[x] + itemList[indexPlus] == k)
-            {
-                Debug.WriteLine(itemList[x] + " + " + itemList[indexPlus] + " = " + k);
-            }
-            else
-            {
-                Debug.WriteLine("False @ " + itemList[x]);
-            }
- * */
