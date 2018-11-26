@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace DailyCodingProblem112518
 {
@@ -25,23 +26,35 @@ namespace DailyCodingProblem112518
                 itemList.Add(rand.Next(1, 13));
                 i++;
             }
-            for (int x = 0; x < itemList.Count - 1; x++)
+            for (int x = 0; x < itemList.Count; x++)
             {
-                if (x < numRange - 1)
+                for (int y = 0; y < itemList.Count; y++)
                 {
-                    int indexPlus = x + 1;
-                    if (itemList[x] + itemList[indexPlus] == k)
+                    if (itemList[x] + itemList[y] != k)
                     {
-                        Console.WriteLine(itemList[x] + " + " + itemList[indexPlus] + " = " + k);
-                    }
-                    else
+                        Debug.WriteLine(itemList[x] + " + " + itemList[y] + " not equal to " + k);
+                    } else
                     {
-                        Console.WriteLine("False @ " + itemList[x]);
+                        Debug.WriteLine("***--->" + itemList[x] + " + " + itemList[y] + " is equal to " + k);
                     }
                 }
             }
-            Console.ReadKey();
         }
     }
 }
 
+// for each number
+//   loop over each number (skipping same numbers)
+
+
+/*
+                 int indexPlus = x + 1;
+            if (itemList[x] + itemList[indexPlus] == k)
+            {
+                Debug.WriteLine(itemList[x] + " + " + itemList[indexPlus] + " = " + k);
+            }
+            else
+            {
+                Debug.WriteLine("False @ " + itemList[x]);
+            }
+ * */
